@@ -1,0 +1,42 @@
+완료된 작업
+1. 빠른 검증 버튼 수정
+Prompts.js에 quickValidating 상태 추가
+로딩 상태 표시 및 결과 UI 개선
+검증 통과/실패/경고 메시지 구분 표시
+
+2. 활성화 체크박스 기능 개선
+편집 모드 없이도 즉시 토글 가능하도록 수정
+변경 시 자동 저장 기능 추가
+
+3. 기본값 프롬프트 기능 구현
+DB: is_default 컬럼 추가 (database.js:82-87)
+API: 3개 엔드포인트 추가 (prompts.js:54-88, 736-819)
+GET /api/prompts/defaults
+POST /api/prompts/:key/set-default
+DELETE /api/prompts/:key/set-default
+클라이언트 API: getDefaults, setDefault, unsetDefault 함수 추가
+UI: 프롬프트 편집 화면에 기본값 설정 버튼 추가
+문항 생성: 문항 번호 선택 시 기본 프롬프트 자동 선택
+
+4. 문서 작성
+todo.md - 문항 검증기 점검 및 개선 TODO 문서 생성
+할일 목록 (todo.md 기반)
+Phase 1 (High Priority)
+항목	상태
+item_specs.json 기본 구조 생성	⬜
+주요 문항 유형 스펙 정의 (18, 20, 29-34)	⬜
+Prompt Validator 연동 강화	⬜
+Phase 2 (Medium Priority)
+항목	상태
+나머지 문항 스펙 완성 (1-45번)	⬜
+AI Validator issue code 구현	⬜
+검증 결과 UI 개선	⬜
+Phase 3 (Low Priority)
+항목	상태
+Item Validator 고도화	⬜
+자동 개선 제안 기능	⬜
+검증 리포트 생성	⬜
+현재 시스템 상태
+백엔드: http://localhost:3001 (실행 중)
+프론트엔드: http://localhost:3000 (실행 중)
+Git: clean (변경사항 없음)
