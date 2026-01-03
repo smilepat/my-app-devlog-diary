@@ -1,0 +1,26 @@
+1. 초기 단계: 역할 정의 및 규격 수립 (Role-Based Foundation)
+파일 위치: constants.tsx 내 MASTER_PROMPT
+개발 전략: AI에게 **'대한민국 수능 영어 출제 위원(Expert CSAT English item writer)'**이라는 명확한 페르소나를 부여했습니다.
+핵심 로직:
+국가 교육과정 준수: "EFL 학습자를 위한 공정성 확보", "EBS/KICE 기출 문항 복제 금지(NON-OVERRIDABLE)" 등의 엄격한 제약 조건을 프롬프트 최상단에 배치했습니다.
+JSON 출력 계약: 시스템 안정성을 위해 AI가 반드시 특정 JSON 구조로만 답변하도록 강제하는 'Strict JSON Contract'를 도입했습니다.
+2. 고도화 단계: 유형별 특화 지능 분화 (Specialized Logic Branching)
+파일 위치: constants.tsx 내 QUESTION_TYPES (1번부터 45번까지)
+개발 전략: 수능의 모든 문항(듣기 17문항, 읽기 28문항)을 분석하여 각 유형에 최적화된 **'아이템 사양서(Item Specifications)'**를 프롬프트화했습니다.
+특이점:
+31-34번(빈칸 추론): "추상도 레벨 9(Abstractness Level 9)", "역설적 진실(Paradox)" 등의 고난도 논리 구조를 프롬프트에 주입했습니다.
+21번(함축 의미): "빙산의 일각(tip of the iceberg) 같은 뻔한 관용구 금지"와 같은 부정 프롬프트를 통해 창의성을 유도했습니다.
+3. 검증 단계: Multi-Agent 감사 시스템 도입 (Dual-Engine Validation)
+파일 위치: services/geminiService.ts 내 analyzePassage, auditPromptQuality
+개발 전략: 하나의 프롬프트가 문항을 만들면, 다른 프롬프트가 이를 감시하는 **'감사 프롬프트'**를 설계했습니다.
+진화 내용:
+논리 응집성(Coherence): 지문의 논리적 연결성을 0-100점으로 수치화하는 분석 프롬프트를 개발했습니다.
+어휘 감사(Vocab Audit): 사용된 단어가 수능 범위를 벗어나는지 체크하고 대체 어휘를 제안하는 로직이 추가되었습니다.
+4. 완성 단계: 자가 진화 및 비교 시스템 (Self-Evolution & Diff View)
+파일 위치: components/PromptLab.tsx, services/geminiService.ts 내 optimizePrompt
+개발 전략: 인간의 피드백을 받아 AI가 스스로 자신의 프롬프트를 개선하는 'Meta-Prompting' 기술을 적용했습니다.
+최근 업데이트 (Diff Viewer):
+사용자가 프롬프트를 수정하기 전, **수정 전(Original) vs 수정 후(Proposed)**를 좌우로 배치하여 논리적 변화를 시각적으로 검토할 수 있는 [Intelligence Diff Viewer] 모달을 개발했습니다.
+이를 통해 '챔피언 로직(Champion Logic)'을 선별하는 벤치마킹 프로세스가 완성되었습니다.
+결론: 프롬프트의 현재 상태
+현재 시스템의 프롬프트는 단순한 텍스트가 아니라, **IndexedDB에 버전별로 스냅샷이 찍혀 저장되는 '소프트웨어 자산'**으로 관리되고 있습니다. 특히 App.tsx의 promptSnapshot 기능을 통해, 과거에 뛰어난 문항을 만들었던 특정 시점의 지능을 언제든지 복구(Restore)할 수 있는 **지능 회구 시스템(Intelligence Regression System)**을 갖추고 있습니다.
