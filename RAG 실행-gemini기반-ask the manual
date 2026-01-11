@@ -1,0 +1,5 @@
+To run the tool:
+1. Open a new terminal.
+2. Type: cd "C:\Users\eltko\Desktop\ask-the-manual"
+3. Type: npm install
+4. Type: npm run dev
